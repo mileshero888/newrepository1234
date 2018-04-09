@@ -1,0 +1,23 @@
+<% include ../shared/header.ejs %>
+
+<h1>Edit Product</h1>
+
+<form method="post">
+    <fieldset class="form-group">
+        <label class="control-label col-md-2">Product Name: *</label>
+        <input name="ProductName" id="ProductName" required value="<%= product.ProductName %>" />
+    </fieldset>
+    <fieldset class="form-group">
+        <label class="control-label col-md-2">Product Price: *</label>
+        <input name="Price" id="Price" required type="number" min="1" value="<%= product.Price %>" />
+    </fieldset>
+    <fieldset class="form-group">
+        
+        <label class="control-label col-md-2">Product Description: *</label>
+        <textarea name="Description" id="Description" required cols="20" rows="5" ><%= product.Description %></textarea>
+    </fieldset>
+
+    <button class="offset-2 btn btn-primary">Update</button>
+</form>
+
+<% include ../shared/footer.ejs %>

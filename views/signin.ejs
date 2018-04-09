@@ -1,0 +1,27 @@
+<% include shared/header.ejs %>
+
+<h1>SignIn | Buzz Ads</h1>
+
+<% if (messages.length > 0) { %>
+    <div class="alert alert-danger"><%= messages %></div>
+<% }
+else { %>
+    <div class="alert alert-info">Please Enter Username and Password To SignIn | Buzz Ads</div>
+<% } %>
+
+<form method="post" id="lgn-frm">
+    <fieldset class="form-group">
+        <label for="username" class="col-sm-2 control-label">Enter Username: *</label>
+        <input name="username" id="username" required />
+    </fieldset>
+    <fieldset class="form-group">
+        <label for="password" class="col-sm-2 control-label">Enter Password: *</label>
+        <input name="password" id="password" type="password" required />
+    </fieldset>
+
+    <button class="btn btn-primary offset-2">Sign In</button>
+    <hr />
+    Not Signed Up Yet ?  <a href="/register" title="Register">SignUp Here!</a>
+</form>
+
+<% include shared/footer.ejs %>

@@ -1,0 +1,25 @@
+<% include ../shared/header %>
+
+<h1>Products List</h1>
+
+<a href="/products/add">Add New Product</a>
+
+<table class="table table-striped table-hover">
+    <tr>
+        <th>Product Name</th>
+        <th>Product Price</th>
+        <th>Actions</th>
+    </tr>
+    <% for(let i = 0; i < products.length; i++) { %>
+        <tr>
+            <td><%= products[i].ProductName %></td>
+            <td><%= products[i].Price %></td>
+            <td>
+                <a class="btn btn-info" href="/products/edit/<%= products[i]._id %>">Edit</a>
+                <a class="btn btn-danger" href="/products/delete/<%= products[i]._id %>" onclick="return confirm('Are you sure you want to delete this?');">Delete</a>
+            </td>
+        </tr>
+    <% } %>
+</table>
+
+<% include ../shared/footer %>

@@ -1,0 +1,26 @@
+<% include shared/header.ejs %>
+
+<h1>Sign Up | Buzz Ads</h1>
+
+<form method="post">
+    <fieldset class="form-group">
+        <label for="username" class="col-sm-2 control-label">Enter Email: *</label>
+        <input name="username" id="username" required type="email" />
+    </fieldset>
+    <fieldset class="form-group">
+        <label for="password" class="col-sm-2 control-label">Enter Password: *</label>
+        <input name="password" id="password" type="password" required />
+    </fieldset>
+    <fieldset class="form-group">
+        <label for="confirm" class="col-sm-2 control-label">Confirm Password: *</label>
+        <input name="confirm" id="confirm" type="password" required />
+    </fieldset>
+   
+    <div class="form-group">
+        <button class="btn btn-primary offset-2">SignUp</button>
+        <hr />
+        Already Signed In On Buzz Ads ?  <a href="/login" title="Login">Sign In Here!</a>
+    </div>
+</form>
+
+<% include shared/footer.ejs %>

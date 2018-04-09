@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title><%= title %></title>
+
+    <!-- Minified Botstrap CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+    <!-- Custom Styles CSS File -->
+    <link rel="stylesheet" href="/stylesheets/customstyle.css" />
+</head>
+<body>
+<!-- Website Main Navigation Section Start -->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Buzz Ads - Classified Ads App</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/">Home</a></li>
+        <li><a href="/shop">Shop</a></li>
+        
+      </ul>
+      <ul class="pull-right nav navbar-nav">
+      <% if (user == undefined) { %>
+            <!-- Login & Register For Unauthorized Users -->
+            <li><a class="nav-link" href="/signup">Register</a></li>
+            <li><a class="nav-link" href="/signin">Login</a></li>
+        <% }
+        else { %>
+            <!-- LogOut & MyProducts For Unauthorized Users -->
+            <li><a><%= user.username %></a></li>
+            <li><a class="nav-link" href="/logout">Logout</a></li>
+            <li><a class="nav-link" href="/products">MyProducts</a></li>
+        <% } %>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- Website Main Navigation Section ENd -->
+
+<!-- Website Main Wrapper Start -->
+<main class="container" role="main" id="main-wrapper">
